@@ -1,0 +1,49 @@
+<ion-header>
+<ion-navbar color="primary">
+  <button ion-button menuToggle>
+    <ion-icon name="menu"></ion-icon>
+  </button>
+  <ion-title>Settings</ion-title>
+</ion-navbar>
+</ion-header>
+
+<ion-content class="settings">
+
+  <ion-list no-border>
+    <ion-item>
+      <ion-toggle [checked]="settings.commentNotifications" (click)="toggleComments()"></ion-toggle>
+      <ion-label>
+        Comment Notifications
+      </ion-label>
+    </ion-item>
+
+    <ion-item>
+      <ion-toggle [checked]="settings.ratingNotifications" (click)="toggleRatings()"></ion-toggle>
+      <ion-label>
+        Rating Notifications
+      </ion-label>
+    </ion-item>
+
+    <ion-item>
+      <ion-toggle [checked]="settings.followerNotifications" (click)="toggleFollowers()"></ion-toggle>
+      <ion-label>
+        New Follower Notifications
+      </ion-label>
+    </ion-item>
+
+    <ion-item>
+      <ion-label color="dark">Change Username</ion-label>
+      <ion-input type="text" maxlength="12" placeholder="New Username" [(ngModel)]="newUsername"></ion-input>
+    </ion-item>
+    
+    <button ion-button block color="primary" (click)="changeUsername()"> Change Username</button>
+
+    <ion-item>
+      <ion-label color="dark">Change Password</ion-label>
+      <ion-input type="password" placeholder="New Password" [(ngModel)]="newPassword"></ion-input>
+    </ion-item>
+  </ion-list>
+
+  <button ion-button block color="primary" (click)="changePassword()"> Change Password</button>
+
+</ion-content>
