@@ -1,0 +1,33 @@
+<ion-header>
+<ion-navbar color="primary">
+  <button ion-button menuToggle>
+    <ion-icon name="menu"></ion-icon>
+  </button>
+  <ion-title>Log in</ion-title>
+</ion-navbar>
+</ion-header>
+
+<ion-content class="login">
+  
+ <ion-list>
+
+    <ion-item>
+      <ion-input type="email" placeholder="Email" [(ngModel)]="credentials.email" required></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-input type="password" placeholder="Password" [(ngModel)]="credentials.password"></ion-input>
+    </ion-item>
+
+  </ion-list>
+    <button ion-button full color="facebook" (click)="loginWithFacebook()">
+      <ion-icon name="logo-facebook" item-left></ion-icon>
+      Login with Facebook
+    </button>
+  
+    <button ion-button full color="primary" (click)="logIn()"> Log in</button>
+  
+  <button ion-button clear full (click)="goToSignupPage()">
+          Or create an account
+        </button> 
+</ion-content>
