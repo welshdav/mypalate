@@ -1,0 +1,11 @@
+<ion-item *ngIf="post">
+    <ion-avatar item-left (click)="emitView()">
+      <img class="cover" [src]="post.user.avatar_url">
+    </ion-avatar>
+    <h2>{{post.user.firstName}} {{post.user.lastName}}</h2>
+    <p>@{{post.user.username}}</p>
+  <ion-note item-right padding-right>
+    {{post.createdAt | date}}
+  </ion-note>
+  <ion-icon item-right medium name="more" (click)="showOptions($event)"></ion-icon>
+</ion-item>
