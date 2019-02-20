@@ -1,0 +1,73 @@
+
+  "name": "ionic-hello-world",
+  "author": "Ionic Framework",
+  "homepage": "http://ionicframework.com/",
+  "private": true,
+  "scripts": {
+    "clean": "ionic-app-scripts clean",
+    "build": "ionic-app-scripts build",
+    "ionic:build": "ionic-app-scripts build",
+    "ionic:serve": "ionic-app-scripts serve"
+  },
+  "dependencies": {
+    "@angular/common": "2.2.1",
+    "@angular/compiler": "2.2.1",
+    "@angular/compiler-cli": "2.2.1",
+    "@angular/core": "2.2.1",
+    "@angular/forms": "2.2.1",
+    "@angular/http": "2.2.1",
+    "@angular/platform-browser": "2.2.1",
+    "@angular/platform-browser-dynamic": "2.2.1",
+    "@angular/platform-server": "2.2.1",
+    "@ionic/storage": "1.1.7",
+    "angular2-apollo": "^0.9.0-rc.5",
+    "apollo-client": "^0.7.3",
+    "cordova-plugin-camera": "^2.3.1",
+    "feathers": "^2.0.3",
+    "feathers-authentication": "^1.0.2",
+    "feathers-authentication-client": "^0.1.6",
+    "feathers-hooks": "^1.7.1",
+    "feathers-rest": "^1.6.0",
+    "graphql-tag": "^1.2.3",
+    "ionic-angular": "2.0.0-rc.5",
+    "ionic-native": "2.2.11",
+    "ionicons": "3.0.0",
+    "isomorphic-fetch": "^2.2.1",
+    "rxjs": "5.0.0-beta.12",
+    "superagent": "^3.3.2",
+    "sw-toolbox": "3.4.0",
+    "zone.js": "0.6.26"
+  },
+  "devDependencies": {
+    "@ionic/app-scripts": "1.0.0",
+    "@types/chai": "^3.4.34",
+    "@types/node": "^7.0.0",
+    "typescript": "2.0.9"
+  },
+  "cordovaPlugins": [
+    "cordova-plugin-whitelist",
+    "cordova-plugin-console",
+    "cordova-plugin-statusbar",
+    "cordova-plugin-device",
+    "cordova-plugin-splashscreen",
+    "ionic-plugin-keyboard",
+    {
+      "variables": {
+        "APP_ID": "252538718443816",
+        "APP_NAME": "MyPalate"
+      },
+      "locator": "cordova-plugin-facebook4",
+      "id": "cordova-plugin-facebook4"
+    },
+    {
+      "variables": {
+        "SENDER_ID": "267247394402"
+      },
+      "locator": "phonegap-plugin-push"
+    }
+  ],
+  "cordovaPlatforms": [
+    "android"
+  ],
+  "description": "my-palate-updated: An Ionic project"
+}
