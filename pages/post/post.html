@@ -1,0 +1,37 @@
+<ion-header>
+<ion-navbar color="primary">
+  <button ion-button menuToggle>
+    <ion-icon name="menu"></ion-icon>
+  </button>
+  <ion-title>
+    Post
+  </ion-title>
+</ion-navbar>
+</ion-header>
+
+<ion-content padding class="page3">
+
+  <button ion-button block color="primary" (click)="getPhoto()">Choose Photo from Gallery </button>
+  <button ion-button block color="primary" (click)="takePhoto()">Take Photo</button>
+  <div class="center">
+  <img [src]="post.image">
+  </div>
+  <div class="center">
+  <button  ion-button (click)="resetPhoto()">Cancel</button>
+  </div>
+    <ion-item>
+      <ion-input type="text" placeholder="Title of Recipe" [(ngModel)]="post.title"></ion-input>
+    </ion-item>
+    
+    <ion-item>
+      <ion-textarea type="text" placeholder="Description" [(ngModel)]="post.description"></ion-textarea>
+    </ion-item>
+    
+    <ion-item>  
+      <ion-textarea type="text" placeholder="Recipe" [(ngModel)]="post.recipe"></ion-textarea>
+    </ion-item>
+   
+   <br>
+  <button ion-button block color="primary" (click)="createPost()">Submit</button>
+
+</ion-content>
