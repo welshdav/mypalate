@@ -1,0 +1,48 @@
+<ion-header>
+<ion-navbar color="primary">
+  <ion-title>Signup</ion-title>
+</ion-navbar>
+</ion-header>
+
+<ion-content padding class="signup">
+  
+  <ion-list>
+    <ion-item>
+      <ion-input type="text" placeholder="First Name" [(ngModel)]="credentials.firstName"></ion-input>
+    </ion-item>
+    
+    <ion-item>
+      <ion-input type="text" placeholder="Last Name" [(ngModel)]="credentials.lastName"></ion-input>
+    </ion-item>
+    
+    <ion-item>
+      <ion-input type="text" maxlength="12" placeholder="Username" [(ngModel)]="credentials.username"></ion-input>
+    </ion-item>
+    
+    <ion-item>
+      <ion-input type="email" placeholder="Email" [(ngModel)]="credentials.email"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-input type="password" placeholder="Password" [(ngModel)]="credentials.password" ></ion-input>
+    </ion-item>
+  </ion-list>
+  
+  <ion-list>
+  <ion-item>
+    <ion-label>I am a...</ion-label>
+    <ion-select [(ngModel)]="credentials.experience">
+      <ion-option value="restaurant chef">Restaurant Chef</ion-option>
+      <ion-option value="home cook">Home Cook</ion-option>
+      </ion-select>
+      </ion-item>
+</ion-list>
+
+<button ion-button full color="facebook" (click)="signUpWithFacebook()">
+  <ion-icon name="logo-facebook" item-left></ion-icon>
+  Continue with Facebook
+</button>
+
+<button ion-button full (click)="signUp()" > Signup 
+</button>
+</ion-content>
