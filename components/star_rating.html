@@ -1,0 +1,19 @@
+<div class="center">
+<ion-item>
+        <button ion-button color="secondary" clear (click)=ratePost(1)>
+            <ion-icon [name]=" rating >= 1 ? 'star': 'star-outline' "></ion-icon>
+        </button>
+        <button ion-button color="secondary" clear (click)=ratePost(2)>
+            <ion-icon [name]=" rating >= 2 ? 'star': 'star-outline' "></ion-icon>
+        </button>
+        <button ion-button color="secondary" clear (click)=ratePost(3)>
+            <ion-icon [name]=" rating >= 3 ? 'star': 'star-outline' "></ion-icon>
+        </button>
+        <button ion-button color="secondary" clear (click)=ratePost(4)>
+            <ion-icon [name]=" rating >= 4 ? 'star': 'star-outline' "></ion-icon>
+        </button>
+        <button ion-button color="secondary" clear (click)=ratePost(5)>
+            <ion-icon [name]=" rating >= 5? 'star': 'star-outline' "></ion-icon>
+        </button>
+</ion-item>
+</div>
