@@ -1,0 +1,22 @@
+<ion-card-header>
+    {{post.title}}
+</ion-card-header>
+
+<img [src]="post.image_url" (click)="emitView(post)">
+<ion-card-content>
+    <p>{{post.description}}</p>
+</ion-card-content>
+
+<star-rating class="center" [rating]="post.user_rating" (rate)=ratePost($event)></star-rating>
+<ion-item>
+    <button ion-button color="primary" clear item-left>
+        <ion-icon name="star"></ion-icon>
+        <div>{{post.rating}} Stars</div>
+    </button>
+    
+    <button ion-button color="primary" clear item-right (click)="emitView(Post)">
+        <ion-icon name="text"></ion-icon>
+        <div>{{post.comment_count}} Comments</div>
+    </button>
+
+</ion-item>
