@@ -1,0 +1,77 @@
+<ion-header>
+<ion-navbar color="primary">
+  <button ion-button menuToggle>
+    <ion-icon name="menu"></ion-icon>
+  </button>
+  <ion-title>
+    Profile
+  </ion-title>
+</ion-navbar>
+</ion-header>
+
+<ion-content class="profile">
+  <ion-refresher (ionRefresh)="refresh($event)">
+    <ion-refresher-content></ion-refresher-content>
+  </ion-refresher>
+  <ion-card *ngIf="profile && profile.avatar_url">
+    <ion-item>
+      <ion-avatar item-left>
+        <img class="cover" (click)="editProfilePic()" [src]="profile.avatar_url">
+      </ion-avatar>
+      <h2>
+        {{profile.firstName}} {{profile.lastName}}
+      </h2>
+      <p>@{{profile.username}} | {{profile.rank}}</p>
+
+      <button ion-button color="primary" item-right [hidden]="!canFollow" (click)="followUser(profile.id)">
+        <ion-icon name="person-add"></ion-icon>
+        Follow
+      </button>
+      <button ion-button color="primary" outline item-right [hidden]="!isFollowing" (click)="unFollowUser(profile.id)">
+        <ion-icon name="person"></ion-icon>
+        Following
+      </button>
+    </ion-item>
+
+    <ion-card-content>
+      <p>{{profile.description}}</p>
+    </ion-card-content>
+  </ion-card>
+
+  <ion-row *ngIf="profile && profile.avatar_url">
+    <ion-col width-33>
+        <button ion-button style="color: #C00000" full clear>posts</button>
+        <!--<h2 style="color: #C00000">posts</h2>-->
+    </ion-col>
+    <ion-col width-33>
+        <button ion-button style="color: #C00000" full clear>following</button>
+    </ion-col>
+    <ion-col width-33>
+        <button ion-button style="color: #C00000" full clear>followers</button>
+    </ion-col>
+  </ion-row>
+  <ion-row *ngIf="profile && profile.avatar_url">
+    <ion-col width-33>
+      <button ion-button full>{{profile.post_count}}
+      </button>
+    </ion-col>
+    <ion-col width-33>
+      <button ion-button (click)="viewFollowing(profile.id)" full>{{profile.following_count}}
+      </button>
+    </ion-col>
+    <ion-col width-33>
+      <button ion-button (click)="viewFollowers(profile.id)" full>{{profile.follower_count}}
+      </button>
+    </ion-col>
+  </ion-row>
+
+  <ion-grid>
+    <ion-row wrap>
+      <ion-col width-33 *ngFor="let post of profile.posts">
+        <img [src]="post.image_url" (click)="viewDetails(post)" width="110" height="110" class="cover">
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
+
+</ion-content>
