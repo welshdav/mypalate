@@ -1,0 +1,55 @@
+<ion-header>
+<ion-navbar color="primary">
+  <ion-title>View Post</ion-title>
+</ion-navbar>
+</ion-header>
+
+<ion-content class="post-detail">
+  <ion-refresher (ionRefresh)="refresh($event)">
+    <ion-refresher-content></ion-refresher-content>
+  </ion-refresher>
+
+  <ion-card *ngIf="post && post.user">
+
+    <post-info [post]="post" (view)="goToProfile($event)" (delete)="deletePost($event)"></post-info>
+
+    <ion-card-header>
+      {{post.title}}
+    </ion-card-header>
+
+    <img [src]="post.image_url">
+
+    <ion-card-content>
+      <p>{{post.description}}</p>
+      <br>
+      <h2 [hidden]="!post.recipe"> Recipe</h2>
+      <pre><p>{{post.recipe}}</p></pre>
+    </ion-card-content>
+
+    <star-rating class="center" [rating]="post.user_rating" (rate)=updateRating($event)></star-rating>
+
+    <ion-item>
+      <button ion-button color="primary" clear item-left>
+        <ion-icon name="star"></ion-icon>
+        <div>{{post.rating}} Rating</div>
+      </button>
+      <button ion-button color="primary" clear item-right>
+        <ion-icon name="text"></ion-icon>
+        <div>{{post.comment_count}} Comments</div>
+      </button>
+
+    </ion-item>
+    <ion-item>
+      <ion-textarea type="text" placeholder="Add Comment" [(ngModel)]="comment">
+      </ion-textarea>
+      <button ion-button item-right color="primary" (click)="createComment()">
+            Send
+            <ion-icon name="send"></ion-icon>
+      </button>
+    </ion-item>
+
+  </ion-card>
+  <ion-card *ngFor="let comment of post.comments">
+    <comment [comment]="comment" (view)="goToProfile($event)" (delete)="deleteComment($event)"></comment>
+  </ion-card>
+</ion-content>
