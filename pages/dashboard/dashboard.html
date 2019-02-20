@@ -1,0 +1,29 @@
+<ion-header>
+<ion-navbar color="primary">
+  <button ion-button menuToggle>
+    <ion-icon name="menu"></ion-icon>
+  </button>
+  <ion-title>Dashboard</ion-title>
+</ion-navbar>
+</ion-header>
+
+<ion-content class="dashboard">
+  <ion-refresher class="center" (ionRefresh)="refresh($event)">
+    <ion-refresher-content></ion-refresher-content>
+  </ion-refresher>
+    <p class="center" *ngIf="!loaded">
+      <ion-spinner class="center"></ion-spinner>
+    </p>
+  
+  <div *ngIf="loaded && !posts[0]" class="container">
+      <h5 >Follow People To See New Posts!</h5>
+  </div>
+
+  <ion-card *ngFor="let post of posts">
+
+    <post-info [post]="post" (view)="goToProfile($event)" (delete)="deletePost($event)"></post-info>
+
+    <post [post]="post" (view)="viewDetails($event)" (rate)="updateRating($event)"></post>
+
+  </ion-card>
+</ion-content>
