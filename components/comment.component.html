@@ -1,0 +1,13 @@
+    <ion-item>
+        <ion-avatar item-left (click)="emitView(comment.from.id)">
+            <img class="cover" [src]="comment.from.avatar_url">
+        </ion-avatar>
+        <p>@{{comment.from.username}}</p>
+        <ion-note item-right padding-right>
+            {{comment.createdAt | date}}
+        </ion-note>
+        <ion-icon item-right medium name="more" (click)="showOptions($event)"></ion-icon>
+    </ion-item>
+    <ion-card-content>
+        <p>{{comment.content}}</p>
+    </ion-card-content>
