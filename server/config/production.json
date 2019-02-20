@@ -1,0 +1,26 @@
+{
+  "host": "my-palate.herokuapp.com",
+  "port": "PORT",
+  "postgres": "DATABASE_URL",
+  "aws": {
+    "accessKeyId": "AKIAJBCWEXNXXQXJBORA",
+    "secretAccessKey": "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"
+  },
+  "public": "../public/",
+  "gcmApiKey": "AIzaSyAGF4uIncrPTMc9O4VtfM2em1Ur44yBYbo",
+  "auth": {
+    "idField": "id",
+    "token": {
+      "secret": "FEATHERS_AUTH_SECRET",
+      "expiresIn": "7d"
+    },
+    "local": {},
+    "facebook": {
+      "clientID": "252538718443816",
+      "clientSecret": "654158e2cada6ed32607289d8e68b745",
+      "permissions": {
+        "scope": ["public_profile","email"]
+      }
+    }
+  }
+}
