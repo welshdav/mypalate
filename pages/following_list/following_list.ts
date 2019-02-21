@@ -4,12 +4,7 @@ import {ProfilePage} from '../profile/profile';
 import {Angular2Apollo} from 'angular2-apollo';
 import {Observable} from 'rxjs/Observable';
 import gql from 'graphql-tag';
-/*
-  Generated class for the FollowingListPage page.
 
-  See http://ionicframework.com/docs/v2/components/#navigation for more info on
-  Ionic pages and navigation.
-*/
 @Component({
   templateUrl: 'following-list.html',
 })
